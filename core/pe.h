@@ -2,8 +2,11 @@
  * PE format.
  */
 
+
 #ifndef PE_H
 #define PE_H
+#undef UNW_FLAG_NHANDLER
+#include <winnt.h>
 
 #ifdef VMP_GNU
 
@@ -771,12 +774,12 @@ typedef struct _IMAGE_DELAY_IMPORT_DESCRIPTOR {
 	DWORD   TimeStamp;
 } IMAGE_DELAY_IMPORT_DESCRIPTOR;
 
-typedef struct _IMAGE_LOAD_CONFIG_CODE_INTEGRITY {
-	WORD    Flags;          // Flags to indicate if CI information is available, etc.
-	WORD    Catalog;        // 0xFFFF means not available
-	DWORD   CatalogOffset;
-	DWORD   Reserved;       // Additional bitmask to be defined later
-} IMAGE_LOAD_CONFIG_CODE_INTEGRITY, *PIMAGE_LOAD_CONFIG_CODE_INTEGRITY;
+//typedef struct _IMAGE_LOAD_CONFIG_CODE_INTEGRITY {
+//	WORD    Flags;          // Flags to indicate if CI information is available, etc.
+//	WORD    Catalog;        // 0xFFFF means not available
+//	DWORD   CatalogOffset;
+//	DWORD   Reserved;       // Additional bitmask to be defined later
+//} IMAGE_LOAD_CONFIG_CODE_INTEGRITY, *PIMAGE_LOAD_CONFIG_CODE_INTEGRITY;
 
 //
 // Load Configuration Directory Entry

@@ -16,6 +16,7 @@
 #include "core.h"
 #include "script.h"
 #include "pdb.h"
+#include "pe.h"
 
 #ifdef DEMO
 #include "win_runtime32demo.dll.inc"
@@ -3405,7 +3406,7 @@ void PETLSDirectory::ReadFromFile(PEArchitecture &file, PEDirectory &directory)
 		address_of_index_ = tls.AddressOfIndex;
 		address_of_call_backs_ = tls.AddressOfCallBacks;
 		size_of_zero_fill_ = tls.SizeOfZeroFill;
-		characteristics_ = tls.Characteristics;
+		characteristics_ = tls.u.Characteristics;
 	} else {
 		IMAGE_TLS_DIRECTORY64 tls;
 		file.Read(&tls, sizeof(tls));
@@ -3414,7 +3415,7 @@ void PETLSDirectory::ReadFromFile(PEArchitecture &file, PEDirectory &directory)
 		address_of_index_ = tls.AddressOfIndex;
 		address_of_call_backs_ = tls.AddressOfCallBacks;
 		size_of_zero_fill_ = tls.SizeOfZeroFill;
-		characteristics_ = tls.Characteristics;
+		characteristics_ = tls.u.Characteristics;
 	}
 
 	if (!address_of_call_backs_)

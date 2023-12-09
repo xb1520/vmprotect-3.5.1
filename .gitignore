@@ -123,3 +123,5 @@ third-party/taggant/openssl/ms/Debug/
 /iss/body.txt
 /iss/ipn/vmprotect.vmp
 /iss/ipn/licenses/
+.vs/
+vcproj/tmp

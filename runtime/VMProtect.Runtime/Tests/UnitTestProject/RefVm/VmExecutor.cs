@@ -4973,8 +4973,8 @@ namespace UnitTestProject.RefVm
 				    {
 					    if (name == StringDecryptor.GetString(-1550345495) /* SetTypedReference */)
 					    {
-						    TypedReference.SetTypedReference((TypedReference)args[0], args[1]);
-						    return true;
+                            TypedReference.SetTypedReference((TypedReference)args[0], args[1]);
+                            return true;
 					    }
 				    }
 			    }
